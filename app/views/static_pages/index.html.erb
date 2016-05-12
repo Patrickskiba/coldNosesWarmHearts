@@ -1,0 +1,92 @@
+<div class="row">
+	<div class="main">
+		<div class="center">
+			<h1>
+				Upcoming Events
+			</h1>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="container-fluid">
+		<% unless @events[0].blank? %>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<%= image_tag("eventdog1.jpg") %>
+				<div class="caption">
+					<h4><%=@events[0].start_time.strftime("%A, %B %d, %Y at \n %I:%M%p") %></h4>
+					<h3><%=@events[0].title %></h3>
+					<p></p>
+					<p><%= @events[0].description %></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<% unless @events[1].blank? %>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<%= image_tag("eventdog2.jpg") %>
+				<div class="caption">
+					<h4><%=@events[1].start_time.strftime("%A, %B %d, %Y at \n %I:%M%p") %></h4>
+					<h3><%=@events[1].title %></h3>
+					<p></p>
+					<p><%= @events[1].description %></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<% unless @events[2].blank? %>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<%= image_tag("eventdog3.jpg") %>
+				<div class="caption">
+					<h4><%=@events[2].start_time.strftime("%A, %B %d, %Y at \n %I:%M%p") %></h4>
+					<h3><%=@events[2].title %></h3>
+					<p></p>
+					<p><%= @events[2].description %></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+		<% unless @events[3].blank? %>
+		<div class="col-sm-6 col-md-3">
+			<div class="thumbnail">
+				<%= image_tag("eventdog4.jpg") %>
+				<div class="caption">
+					<h4><%=@events[3].start_time.strftime("%A, %B %d, %Y at \n %I:%M%p") %></h4>
+					<h3><%=@events[3].title %></h3>
+					<p></p>
+					<p><%=@events[3].description %></p>
+				</div>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>
+<div class="container greygrid">
+	<div class="col-md-2"></div>
+	<div class="col-md-8 center">
+		<h3>
+			WHAT IS COLD NOSES, WARM HEARTS?
+		</h3>
+		<h2>
+			We are an all volunteer organization dedicated to animal assisted therapy
+		</h2>
+		<p>
+			Cold Noses, Warm Hearts, Inc. is a non-profit, all volunteer organization,  dedicated to sharing well trained registered therapy animals and Reading Education Assistance Dogs, (R.E.A.D.) in meaningful programs that provide comfort and caring through the human-animal bond.
+			<br/>
+			<br/>
+			Our services are offered in a wide variety of settings including but not limited to hospitals, extended care facilities, universities, children's centers and other facilities where therapy animals are needed along with R.E.A.D. programs in schools and libraries   We strive to make a positive difference in all the lives we touch.
+		</p>
+	</div>
+</div>
+<br/>
+	<div style="width:100%; margin-bottom:20px; margin-left:auto;margin-right:auto;">
+		<% @pictures.each do |picture| %>
+			<div class="col-md-3"><%= link_to image_tag(picture.image.url(:medium), style:"width:100%;"), picture.image.url %></div>
+		<% end %>
+	</div>
+<div class="row">
+	<br/>
+</div>	
+<%= render partial:"contacts/new" %>

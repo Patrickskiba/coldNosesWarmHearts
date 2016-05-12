@@ -1,0 +1,15 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+<% if current_user.try(:admin?) %>
+<div class="container belowNav">
+<h1>New Picture</h1>
+<%= render 'form' %>
+</div>
+<% else %>
+
+  <script>
+  setTimeout(function() {
+  window.location.href = "/";
+}, 2000);
+  </script>
+
+<% end %>

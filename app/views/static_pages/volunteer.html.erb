@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+<div class="container-fluid belowNav">
+<div class="row">
+	<div class="col-md-2">
+	</div>
+<div class="col-md-8 fixlink">
+		<% @contents.each do |content| %>
+	<%= content.body.html_safe %>
+<% end %>
+</div>
+	<div class="col-md-2">
+	</div>
+</div>
+<br/>
+<div class="row">
+	<div class="col-md-2"></div>
+	<div class="col-md-8">
+  <%= link_to 'New Content', new_content_path, class:"btn btn-warning" %>
+  <%= link_to 'Edit Contents', contents_path, class:"btn btn-success" %>
+	
+	</div>
+	<div class="col-md-2">
+	<%= link_to 'Upload a file', uploads_path, class:"btn btn-primary" %>
+</div>
+  </div>
+</div>
+<br/>

@@ -1,0 +1,13 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+
+<p id="notice"><%= notice %></p>
+
+<div class="simpleCal" id="calendar">
+  <br/>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Event', new_event_path, class:"btn btn-warning" %>
+  <%= link_to 'Edit Events', list_events_path, class:"btn btn-success" %>
+<%end%>
+</div>
+
+<br/>

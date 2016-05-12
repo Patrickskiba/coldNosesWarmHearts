@@ -1,0 +1,49 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+<% if current_user.try(:admin?) %>
+<p id="notice"><%= notice %></p>
+<br/>
+<h1 style="text-align:center;" class:"belowNav">Listing Pictures</h1>
+
+<%= link_to 'New Picture', new_picture_path, class:"btn btn-success", style:"margin-left:6%;" %>
+
+<div class="container belowNav">
+  <div class="row">
+    <div class="col-md-2">
+      <h4>Title</h4>
+    </div>
+    <div class="col-md-2">
+      <h4>Description</h4>
+    </div>
+    <div class="col-md-5">
+      <h4>Image</h4>
+    </div>
+    <div class="col-md-3">
+      <h4>Actions</h4>
+    </div>
+  </div>
+  <% @pictures.each do |picture| %>
+    <div class="row eventRows">
+      <div class="col-md-2 eventText">
+        <%= picture.title %>
+      </div>
+      <div class="col-md-2 eventText">
+        <%= picture.description %>
+      </div>
+      <div class="col-md-5 eventText">
+        <%= image_tag(picture.image.url(:medium))%>
+      </div>
+      <div class="col-md-3 eventText">
+        <%= link_to 'Edit', edit_picture_path(picture), class: "btn btn-warning" %>
+        <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+<% else %>
+
+  <script>
+  setTimeout(function() {
+  window.location.href = "/";
+}, 2000);
+  </script>
+<%end%>

@@ -1,0 +1,129 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+a {
+  color: #fff;
+}
+.main {
+  margin-top:15px;
+}
+.center {
+  text-align:center;
+  line-height: 2;
+}
+.center > h1 {
+  font-size:70px;
+}
+@import "banner";
+@import "navbar";
+@import "dogGrids";
+@import "signin";
+
+.thumbnail > img {
+  width:100%;
+}
+
+h3 {
+  color: #1e83ec;
+}
+.greygrid {
+  margin-left: -3%;
+  margin-right: 0;
+  width:106%;
+  background-color: #4a4a4a;
+  h2 {
+    color: white;
+  }
+  p {
+    color: white;
+  }
+}
+.goHome {
+  margin-left:2%;
+  a {
+    color:white;
+  }
+  a:visited {
+    color:white;
+  }
+}
+ a:visited {
+  color:white;
+}
+#calendar {
+  max-width: 900px;
+  margin: auto;
+  margin-top: 40px;
+}
+.belowNav {
+  margin-top: 40px;
+}
+
+.container-dog {
+	margin-right: 4%;
+	margin-left: 4%;
+	width: 100%;
+}
+.item {
+	margin-right: auto;
+	margin-left: auto;
+	$width : 24vw;
+	width: $width;
+	height: $width;
+	img {
+		width: 22.5vw;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	:hover {
+		background-color: transparent;
+	}
+
+}
+.butt:hover {
+			border-width: 2px;
+			border-style: solid;
+			border-color: black;
+}
+.pagination {
+	.current, body > div.container-dog.belowNav > div.pagination > a:nth-child(3), a {
+		display: none;
+		color: blue;
+	}
+	.previous_page {
+		display: block;
+		position: absolute;
+		left: 5%;
+		color:black;
+		top: 60px;
+	}
+	.previous_page > a {
+		color: blue;
+	}
+	.next_page {
+		display: block;
+		position: absolute;
+		left: 90%;
+		color:black;
+		top: 60px;
+	}
+	.next_page > a {
+		color: blue;
+	}
+}
+.previous_page, .previous_page:visited,.previous_page:hover, .next_page, .next_page:visited, .next_page:hover {
+	font-size: 18px;
+	color: black;
+	background-color: transparent;
+}
+
+@import 'simplecal';
+
+

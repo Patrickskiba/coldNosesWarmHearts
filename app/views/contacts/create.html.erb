@@ -1,0 +1,14 @@
+<div class="belowNav">
+  <% flash.each do |key, value| %>
+    <div>
+      <a href="#" data-dismiss="alert">×</a>
+        <%= value %>
+    </div>
+  <% end %>
+  <script>
+  setTimeout(function() {
+  window.location.href = "/";
+}, 2000);
+  </script>
+</div>
+ 

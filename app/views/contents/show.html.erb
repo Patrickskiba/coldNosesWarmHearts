@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<% if current_user.try(:admin?) %>
+<div class="container belowNav">
+<p>
+  <strong>Body:</strong>
+  <%= @content.body %>
+</p>
+
+<%= link_to 'Back', contents_path, class:"btn btn-success" %>
+</div>
+<% else %>
+
+  <script>
+  setTimeout(function() {
+  window.location.href = "/";
+}, 2000);
+  </script>
+
+<% end %>

@@ -1,0 +1,19 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+</div>
+<p id="notice"><%= notice %></p>
+<div class='container-dog belowNav'>
+<%= will_paginate @posts %>
+	<div class="gallery" id='container'>
+		<% @pictures.each do |picture| %>
+			<div class='item'><%= link_to image_tag(picture.image.url(:medium), class:"butt", data:{title:"Caption"}), picture.image.url %></div>
+		<% end %>
+	</div>
+	<br/>
+<% if current_user.try(:admin?) %>
+  <%= link_to 'New Picture', new_picture_path, class:"btn btn-warning" %>
+  <%= link_to 'Edit Pictures', list_pictures_path, class:"btn btn-success" %>
+<%end%>
+</div>
+<br>
+
+<div>

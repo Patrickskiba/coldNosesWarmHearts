@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag 'nonHomeNav', media: 'print, screen' %>
+<% if current_user.try(:admin?) %>
+<div class="container belowNav">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @picture.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @picture.description %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @picture.image %>
+</p>
+
+<%= link_to 'Back', pictures_path, class:"btn btn-success" %>
+</div>
+<% else %>
+
+  <script>
+  setTimeout(function() {
+  window.location.href = "/";
+}, 2000);
+  </script>
+
+<% end %>

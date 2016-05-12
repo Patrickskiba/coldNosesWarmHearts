@@ -1,0 +1,16 @@
+<div class="container" style="text-align:center;width:45%; height:40%;">
+  <h1>Send A message to Us</h1>
+
+  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+	  <%= f.input :name, required:  true, label_html: {style:'display:none'} , input_html: {class: 'form-control', style: "width:100%;margin-bottom:3px;", placeholder: "Name"}%>
+	  <%= f.input :email,:required => true , label_html: {style:'display:none'} ,  input_html: {class: 'form-control', style: "width:100%; margin-bottom:3px;", placeholder: "Email"}%>
+	  <%= f.input :message,:as => :text, :required => true ,label_html: {style:'display:none'} ,  input_html: {class: 'form-control', style: "width:100%; margin-bottom:3px; height: 250px;", placeholder: "Message"}%>
+    <div class= "hidden">
+	    <%= f.input :nickname,:hint => 'Leave this field blank!' , input_html: {class: 'form-control', style: "width:100%;", placeholder: "name"}%>
+    </div>
+    <div>
+      </br>
+      <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
+    </div>
+  <% end %>
+</div> 
